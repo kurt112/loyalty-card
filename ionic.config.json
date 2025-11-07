@@ -1,0 +1,7 @@
+{
+  "name": "loyalty-card",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
