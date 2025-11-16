@@ -1,0 +1,13 @@
+{
+  "company": {
+    "name": "DesignScribe",
+    "logoUri": "https://img.freepik.com/premium-vector/uoe-logo-design-initial-letter-uoe-monogram-logo-using-hexagon-shape_1101554-59452.jpg"
+  },
+  "card": {
+    "title": "DesignScribe",
+    "headerMessage": "Earn rewards every visit!",
+    "currentStamp": 0,
+    "goalStamp": 10,
+    "footerMessage": "Thank you for your loyalty"
+  }
+}
