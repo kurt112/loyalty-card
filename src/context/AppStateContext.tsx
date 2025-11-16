@@ -2,7 +2,7 @@
 import {createContext, useEffect, useState, ReactNode} from "react";
 import {AppData} from "./interfaces";
 import {decryptData, encryptData} from "./security";
-
+import initialData from '../config/initial-data/user-data/data.json';
 export interface AppStateContextValue {
     appData: AppData | undefined;
     updateData: (newData: AppData) => void;
@@ -30,16 +30,8 @@ export const AppStateProvider = ({children}: { children: ReactNode }) => {
         if (!dataUrl) {
             return;
         }
+        localStorage.setItem('appData', encryptData(initialData));
 
-        fetch(dataUrl)
-            .then(response => response.json())
-            .then((data: AppData) => {
-                localStorage.setItem('appData', encryptData(data));
-                return setAppData(data);
-            })
-            .catch(error => {
-                alert("Failed to load app data: " + error);
-            });
     }, []);
 
     const updateData = (newData: AppData) => {

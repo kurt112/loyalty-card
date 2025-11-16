@@ -5,6 +5,7 @@ import React, {FC, useEffect} from "react";
 // import {MyContext} from "../../context/AppStateContext";
 // import logo from "../loyalty-card-screen/design-scribe.png";
 import CardTitle from "../../components/card/title/CardTitle";
+import CardHeader from "../../components/card/header/CardHeader";
 const History: FC = () => {
 
     // const appState = useContext(MyContext);
@@ -34,11 +35,7 @@ const History: FC = () => {
                         {/*/>*/}
                     </div>
                     <IonCard className="w-100">
-                        {/*<div className="bg-gradient-to-r bg-sky-400 text-white p-5 text-center">*/}
-                        {/*    <IonCardTitle*/}
-                        {/*        className="text-xl font-bold text-white">{appState ? appState['company-name'] : ''} </IonCardTitle>*/}
-                        {/*    <p className="text-sm opacity-90">Earn rewards every visit!</p>*/}
-                        {/*</div>*/}
+                        <CardHeader/>
 
                         <IonCardContent className="p-6">
                             {/* User Info */}
