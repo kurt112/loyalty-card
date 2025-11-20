@@ -31,7 +31,7 @@ const Profile: FC = () => {
                         {/* User Info */}
                         <h2 className="mt-6 text-2xl font-bold text-gray-800 tracking-wide">{`${data.appData.user.firstName} ${data.appData.user.lastName}`}</h2>
                         <p className="text-blue-600 text-sm font-medium mt-1">{`${data.appData.user.email}`}</p>
-                        <p className="text-gray-400 text-xs mt-1">Member ID: #102345</p>
+                        <p className="text-gray-400 text-xs mt-1">Loyal Member</p>
                     </div>
                 </div>
                 {/* Actions */}
