@@ -18,7 +18,7 @@ const Profile: FC = () => {
         <IonPage>
             <IonContent fullscreen className="bg-gradient-to-br from-sky-400 to-blue-700 min-h-screen flex flex-col items-center">
                 {/* Profile Card */}
-                <div className="mt-16 bg-white/90 rounded-2xl shadow-md w-full max-w-md mx-auto overflow-hidden">
+                <div className="bg-white/90 rounded-2xl shadow-md w-full overflow-hidden p-5">
                     <div className="flex flex-col items-center p-8">
                         {/* Profile Picture */}
                         <div className="bg-gradient-to-tr from-blue-400 to-sky-300 p-1 rounded-full shadow-lg">
@@ -29,7 +29,7 @@ const Profile: FC = () => {
                             />
                         </div>
                         {/* User Info */}
-                        <h2 className="mt-6 text-2xl font-bold text-gray-800 tracking-wide">{`${data.appData.user.firstName} ${data.appData.user.lastName}`}</h2>
+                        <h2 className="mt-6 text-2xl font-bold text-gray-800 tracking-wide text-center">{`${data.appData.user.firstName} ${data.appData.user.lastName}`}</h2>
                         <p className="text-blue-600 text-sm font-medium mt-1">{`${data.appData.user.email}`}</p>
                         <p className="text-gray-400 text-xs mt-1">Loyal Member</p>
                     </div>
