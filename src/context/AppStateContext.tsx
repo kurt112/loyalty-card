@@ -1,17 +1,46 @@
 // src/context/AppStateContext.tsx
 import {createContext, useEffect, useState, ReactNode} from "react";
-import {AppData} from "./interfaces";
 import {decryptData, encryptData} from "./security";
 import initialData from '../config/initial-data/user-data/data.json';
+import {AppData} from "../config/AppConfig";
+
 export interface AppStateContextValue {
-    appData: AppData | undefined;
+    appData: AppData;
     updateData: (newData: AppData) => void;
 }
 
-export const AppStateContext = createContext<AppStateContextValue | undefined>(undefined);
+const defaultAppData: AppData = {
+    card: {
+        defaultAvatarUri: '',
+        title: '',
+        headerMessage: '',
+        currentStamp: 0,
+        goalStamp: 0,
+        footerMessage: '',
+        rewardMessage: ''
+    },
+    userTransactions: [],
+    company: {
+        name: '',
+        logoUri: ''
+    },
+    user: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: ''
+    },
+    rewards: []
+}
+
+export const AppStateContext = createContext<AppStateContextValue>({
+    appData: defaultAppData,
+    updateData: () => {
+    }
+});
 
 export const AppStateProvider = ({children}: { children: ReactNode }) => {
-    const [appData, setAppData] = useState<AppData | undefined>(undefined);
+    const [appData, setAppData] = useState<AppData>({...defaultAppData});
 
     useEffect(() => {
 
@@ -20,7 +49,7 @@ export const AppStateProvider = ({children}: { children: ReactNode }) => {
         if (appData) {
             try {
                 setAppData(decryptData(appData));
-            }catch (Error){
+            } catch (Error) {
                 console.log(Error);
             }
             return;

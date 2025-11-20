@@ -4,10 +4,27 @@
     "logoUri": "https://img.freepik.com/premium-vector/uoe-logo-design-initial-letter-uoe-monogram-logo-using-hexagon-shape_1101554-59452.jpg"
   },
   "card": {
+    "defaultAvatarUri": "https://ionicframework.com/docs/img/demos/avatar.svg",
     "title": "DesignScribe",
     "headerMessage": "Earn rewards every visit!",
     "currentStamp": 0,
     "goalStamp": 10,
-    "footerMessage": "Thank you for your loyalty"
-  }
+    "footerMessage": "Thank you for your loyalty",
+    "rewardMessage": "Get a free coffee after 10 visits!"
+  },
+  "user": {
+    "firstName": "default-name",
+    "lastName": "default-lastname",
+    "email": "default-email@gmail.com",
+    "phone": "09761353088"
+  },
+  "userTransactions": [],
+  "rewards": [
+    {
+      "id": "1",
+      "title": "Free Coffee",
+      "isClaimed": false,
+      "description": "Get a free coffee after collecting 10 stamps."
+    }
+  ]
 }

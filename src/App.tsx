@@ -33,8 +33,13 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import React, {FC} from "react";
-import ProfileData from "./pages/profile-data/profile-data";
 import {AppStateProvider} from "./context/AppStateContext";
+import ProfileEdit from "./pages/profile/edit/profile-edit";
+import {Switch} from "react-router";
+import RewardsClaim from "./pages/reward-claimed/rewards-claim";
+import AddPoints from "./pages/points/add-points";
+import RewardsClaimedMessage from "./pages/reward-claimed/message/rewards-claimed-message";
+
 setupIonicReact();
 
 
@@ -47,21 +52,32 @@ const App: FC = () => {
                 <AppStateProvider>
                     <IonTabs>
                         <IonRouterOutlet>
-                            <Route exact path="/card">
-                                <LoyaltyCardScene/>
-                            </Route>
-                            <Route exact path="/profile">
-                                <Profile/>
-                            </Route>
-                            <Route exact path="/profile/edit">
-                                <ProfileData/>
-                            </Route>
-                            <Route path="/history">
-                                <History/>
-                            </Route>
-                            <Route exact path="/">
-                                <Redirect to="/card"/>
-                            </Route>
+                            <Switch>
+                                <Route exact path="/card">
+                                    <LoyaltyCardScene/>
+                                </Route>
+                                <Route exact path="/profile">
+                                    <Profile/>
+                                </Route>
+                                <Route exact path="/profile/edit">
+                                    <ProfileEdit/>
+                                </Route>
+                                <Route exact path="/history">
+                                    <History/>
+                                </Route>
+                                <Route exact path="/rewards/claim/:rewardId">
+                                    <RewardsClaim/>
+                                </Route>
+                                <Route exact path="/rewards/claim/:rewardId/message">
+                                    <RewardsClaimedMessage/>
+                                </Route>
+                                <Route exact path="/points/add/:cardId">
+                                    <AddPoints/>
+                                </Route>
+                                <Route exact path="/">
+                                    <Redirect to="/card"/>
+                                </Route>
+                            </Switch>
                         </IonRouterOutlet>
                         <IonTabBar slot="bottom">
                             <IonTabButton tab="card" href="/card">
