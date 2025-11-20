@@ -27,7 +27,7 @@ const RewardsClaim = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-sky-200">
+        <div className="min-h-screen flex items-center justify-center bg-gray-200">
             <form
                 onSubmit={handleClaim}
                 className="bg-white/90 shadow-xl rounded-2xl p-8 w-full max-w-sm flex flex-col items-center"

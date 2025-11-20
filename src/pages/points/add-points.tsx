@@ -83,13 +83,13 @@ const AddPoints = () => {
     }, []);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-sky-200">
+        <div className="min-h-screen flex items-center justify-center bg-gray-200">
             <form
                 onSubmit={handleAddPoints}
                 className="bg-white/90 shadow-xl rounded-2xl p-8 w-full max-w-sm flex flex-col items-center"
             >
                 <h2 className="text-xl font-bold text-center text-blue-700 mb-6">
-                    Add Points to Your Card
+                    Add points to your card
                 </h2>
 
                 <input

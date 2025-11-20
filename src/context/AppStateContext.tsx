@@ -63,6 +63,10 @@ export const AppStateProvider = ({children}: { children: ReactNode }) => {
 
     }, []);
 
+    useEffect(() => {
+
+    }, [appData]);
+
     const updateData = (newData: AppData) => {
         setAppData(prevState => ({
             ...prevState,

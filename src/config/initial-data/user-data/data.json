@@ -19,12 +19,5 @@
     "phone": "09761353088"
   },
   "userTransactions": [],
-  "rewards": [
-    {
-      "id": "1",
-      "title": "Free Coffee",
-      "isClaimed": false,
-      "description": "Get a free coffee after collecting 10 stamps."
-    }
-  ]
+  "rewards": []
 }

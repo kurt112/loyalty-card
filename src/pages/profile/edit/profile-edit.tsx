@@ -29,7 +29,7 @@ const FancyForm = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-sky-200">
+        <div className="min-h-screen flex items-center justify-center bg-gray-200">
             <form
                 onSubmit={handleSubmit}
                 className="bg-white/90 rounded-2xl p-8 w-full max-w-md space-y-6"
