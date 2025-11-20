@@ -60,12 +60,9 @@ export const AppStateProvider = ({children}: { children: ReactNode }) => {
             return;
         }
         localStorage.setItem('appData', encryptData(initialData));
-
+        location.reload();
     }, []);
 
-    useEffect(() => {
-
-    }, [appData]);
 
     const updateData = (newData: AppData) => {
         setAppData(prevState => ({
