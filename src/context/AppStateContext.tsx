@@ -30,6 +30,9 @@ const defaultAppData: AppData = {
         email: '',
         phone: ''
     },
+    employee: {
+        password: []
+    },
     rewards: []
 }
 

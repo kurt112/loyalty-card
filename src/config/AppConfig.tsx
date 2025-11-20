@@ -37,10 +37,16 @@ export interface Reward {
     description: string;
 }
 
+export interface Employee {
+    password: string[];
+}
+
 export interface AppData {
-    company: Company;
-    card: Card;
-    userTransactions: Transaction[];
-    rewards: Reward[];
-    user: User
+    company: Company,
+    card: Card,
+    userTransactions: Transaction[],
+    rewards: Reward[],
+    user: User,
+    employee: Employee;
+
 }

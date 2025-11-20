@@ -13,16 +13,25 @@ const AddPoints = () => {
 
     const data = useContext(AppStateContext);
     const [productName, setProductName] = useState('');
+    const [password, setPassword] = useState('');
     const [isEnabled, setIsEnabled] = useState(false);
     const {cardId} = useParams<CardIdParams>();
 
     const handleAddPoints = (e: React.FormEvent) => {
+
         e.preventDefault();
+
+        if(data.appData.employee.password.indexOf(password) === -1) {
+            alert("Invalid input");
+            return;
+        }
+
         setProductName('');
 
         const newCurrentStamp = data.appData.card.currentStamp + 1;
         const goalStamp = data.appData.card.goalStamp;
         const transactions = data.appData.userTransactions;
+
         const transaction = {
             id: cardId,
             date: moment().toDate(),
@@ -100,6 +109,16 @@ const AddPoints = () => {
                     placeholder="Enter product name to add points"
                     value={productName}
                     onChange={(e) => setProductName(e.target.value)}
+                />
+
+                <input
+                    type="password"
+                    name="password"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none transition mb-5"
+                    required
+                    placeholder="Enter store password to authorize"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <button

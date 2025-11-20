@@ -14,9 +14,17 @@ const RewardsClaim = () => {
     const data = useContext(AppStateContext);
     const [claimed, setClaimed] = useState(false);
     const [productName, setProductName] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleClaim = (e: React.FormEvent) => {
         const isClaimed  = data.appData.rewards.find(reward => reward.id === rewardId)?.isClaimed;
+
+        if(data.appData.employee.password.indexOf(password) === -1) {
+            alert("Invalid input");
+            return;
+        }
+
+
         if (isClaimed) {
             alert("This reward has already been claimed.");
             setClaimed(true);
@@ -44,6 +52,16 @@ const RewardsClaim = () => {
                     placeholder="Enter product name to claim"
                     value={productName}
                     onChange={(e) => setProductName(e.target.value)}
+                />
+
+                <input
+                    type="password"
+                    name="password"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none transition mb-5"
+                    required
+                    placeholder="Enter store password to authorize"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <button

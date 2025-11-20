@@ -74,9 +74,10 @@ const App: FC = () => {
                                 <Route exact path="/points/add/:cardId">
                                     <AddPoints/>
                                 </Route>
-                                <Route exact path="/">
+                                <Route path="/">
                                     <Redirect to="/card"/>
                                 </Route>
+                                <Redirect to={"/card"}/>
                             </Switch>
                         </IonRouterOutlet>
                         <IonTabBar slot="bottom">

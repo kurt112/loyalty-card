@@ -18,6 +18,9 @@
     "email": "default-email@gmail.com",
     "phone": "09761353088"
   },
+  "employee": {
+    "password": ["loyalty", "yourcompanypassword", "designscribe"]
+  },
   "userTransactions": [],
   "rewards": []
 }
